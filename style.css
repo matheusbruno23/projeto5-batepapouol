@@ -1,0 +1,109 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header{
+    width: 100%;
+    background-color: #FFFFFF;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    box-shadow: 0px 4px 6px grey;
+}
+
+.header img{
+    width: 75px;
+    margin-left: 5%;
+}
+
+.header button{
+    background-color: #FFFFFF;
+    font-size: 42px;
+    width: 60px;
+    margin-right: 5%;
+    border: none;
+}
+.mid{
+    width: 100%;
+    height: 2000px;
+    margin-top: 106px;
+    font-family: 'Roboto', sans-serif;
+}
+.bottom{
+    width: 100%;
+    height: 80px;
+    background-color: #FFFFFF;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    box-shadow: 0px -4px 6px grey;
+    font-family: 'Roboto' , sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottom input{
+    font-family: 'Roboto' , sans-serif;
+    font-weight: 400;
+    width: 80%;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 21px;
+    background-color: #FFFFFF;
+    border: none;
+    margin-left: 5%;
+}
+
+.bottom button{
+    width: 10%;
+    height: 100%;
+    background-color: #FFFFFF;
+    border: none;
+    font-size: 26px;
+    margin-right: 5%;
+}
+
+.message{
+    width: 100%;
+    min-height: 40px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    line-height: 17px;
+}
+.enter-chat{
+    font-family: 'Roboto', sans-serif;
+}
+
+.status{
+    background-color: #DCDCDC;
+}
+.normal{
+    background-color: #FFFFFF;
+}
+.private{
+    background-color: #FFDEDE;
+    flex-wrap: wrap;
+}
+
+.hour{
+    color: #AAAAAA;
+}
+
+.name{
+    color: #000000;
+    font-weight: 700;
+}
+
+.send-to{
+    font-weight: 700;
+}
+
+.msg{
+    padding: 14px 8px 12px 8px;
+}
