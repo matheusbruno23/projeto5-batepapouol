@@ -16,32 +16,50 @@
         <img src="./imagens/logo 1.png" alt="">
         <button><ion-icon name="people"></ion-icon></button>
     </div>
-    <div class="mid">
-        <div class="enter-chat message status">
-            <div class="msg"><span class="hour">(Horas aqui)</span> <span class="name">João</span> entrou na sala...</div>
-        </div>
-        <div class="to-all message normal">
-            <div class="msg"><span class="hour">(Horas aqui)</span> <span class="name">João</span> para <span class="send-to">Todos</span>: Bom dia</div>
-        </div>
-        <div class="to-person message normal"> 
-            <div class="msg"><span class="hour">(Horas aqui)</span> <span class="name">Maria</span> para <span class="send-to">João</span>: Oi João :)</div>
-        </div>
-        <div class="private message">
-            <div class="msg"><span class="hour">(Horas aqui)</span> <span class="name">João</span> reservadamente para <span class="send-to">Maria</span>: Oi gatinha quer tc?</div>
-        </div>
-        <div class="left-chat message status">
-            <div class="msg"><span class="hour">(Horas aqui)</span> <span class="name">Maria</span> sai da sala...</div>
-        </div>
+    <ul class="mid">
+        <li data-test="message" class="enter-chat message status">
+                <span class="hour">(Horas aqui)</span>
+                <span class="name">João</span>
+                <span>entrou na sala...</span>
+        </li>
+        <li data-test="message" class="to-all message normal">
+            <span class="hour">(Horas aqui)</span>
+            <span class="name">João</span>
+            <span>para </span>
+            <span class="send-to">Todos</span>
+            <span>: Bom dia</span>
+        </li>
+        <li data-test="message" class="to-person message normal"> 
+            <span class="hour">(Horas aqui)</span>
+            <span class="name">Maria</span>
+            <span>para </span>
+            <span class="send-to">João</span>
+            <span>: Oi João :)</span>
+        </li>
+        <li data-test="message" class="private message">
+            <span class="hour">(Horas aqui)</span>
+            <span class="name">João</span>
+            <span> reservadamente para </span>
+            <span class="send-to">Maria</span>
+            <span>: Oi gatinha quer tc?</span>
+        </li>
+        <li data-test="message" class="left-chat message status">
+            <span class="hour">(Horas aqui)</span>
+            <span class="name">Maria</span>
+            <span>sai da sala...</span>
+        </li>
+        </ul>
     </div>
     <div class="bottom">
-        <input type="text" placeholder="Escreva aqui...">
-        <button><ion-icon name="paper-plane-outline"></ion-icon></button>
+        <input data-test="input-message" class="input-message" type="text" placeholder="Escreva aqui...">
+        <button data-test="send-message" onclick="sendMessage()"><ion-icon name="paper-plane-outline"></ion-icon></button>
     </div>
     
     
     
 
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>
