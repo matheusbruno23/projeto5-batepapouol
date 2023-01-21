@@ -39,12 +39,10 @@ function sendMessage(){
     
 }
 function messageSent(response){
-    console.log('ta dando bom');
     console.log(response);
 }
 function errorMessage(error){
-    console.log('ta dando ruim');
-    console.log(error)
+    window.location.reload()
 }
 
 function loadMessages(){
@@ -54,7 +52,6 @@ function loadMessages(){
 
 function displayMessages(response){
     const messages = response.data;
-    console.log(response);
     const list = document.querySelector('.mid');
     list.innerHTML = ''
     for(let i = 0 ; i <messages.length; i++){
@@ -67,7 +64,7 @@ function displayMessages(response){
             
             templateMessage =
             `
-            <li data-test="message" class="left-chat message status">
+            <li data-test="message" class="message status">
                 <span class="hour">${message.time}</span>
                 <span class="name">${message.from}</span>
                 <span>:${message.text}</span>
@@ -77,7 +74,7 @@ function displayMessages(response){
     } else if(mtype == "message"){
             templateMessage = 
                    `
-            <li data-test="message" class="to-all message normal">
+            <li data-test="message" class="message normal">
             <span class="hour">(${message.time})</span>
             <span class="name">${message.from}</span>
             <span>para </span>
@@ -88,7 +85,7 @@ function displayMessages(response){
      } else if (mtype == "private_message"){
             templateMessage =
             `
-            <li data-test="message" class="private message">
+            <li data-test="message" class="message private">
                 <span class="hour">(${message.time})</span>
                 <span class="name">${message.from}</span>
                 <span> reservadamente para </span>
@@ -100,22 +97,27 @@ function displayMessages(response){
 
         list.innerHTML += templateMessage;
     }
+    
+    const docMsg = document.querySelector(".mid li:last-child");
+    docMsg.scrollIntoView();
+    
 }
 
 function registerUser(){
     const newUser = {name: userName};
     const promise = axios.post(`https://mock-api.driven.com.br/api/v6/uol/participants/`, newUser);
-    promise.catch(errorPost);
-    promise.then(sentPost);
+    promise.catch(errorUser);
+    promise.then(sentUser);
     
 }
 
-function errorPost(response){
-    console.log(response)
+function errorUser(){
+    alert('Usuário em uso! Insira outro nome de usuário!');
+    displayChat();
 }
 
-function sentPost(error){
-    console.log(error)
+function sentUser(response){
+    console.log(response)
 }
 
 
